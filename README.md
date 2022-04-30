@@ -20,3 +20,9 @@ A classe não deve expor mais do que o necessário para ter uma interface simples 
 
 **Acoplamento:** O alto acoplamento torna a classe complexa e dificulta manutenção e testabilidade.
 A classe deve ter o menor número de dependências possível. Aplicando SRP e Encapsulamento, é mais fácil diminuir o acoplamento
+
+### Aula 2 - Buscando o SRP
+- Foi observado que a classe Funcionário tinha uma regra de negócio dentro dela, que representam situações em que o Salário do Funcionário podem ser atualizadas.
+- Optou-se por extrair essa funcionalidade num arquivo externo ReajusteSalarial, que é responsável por validar a situação em que um aumento salarial pode ou não ocorrer
+- Após essa alteração, a classe Funcionário apenas representa um funcionário e não verifica regra de negócio para aumento salarial
+- A nova função `reajustaSalarioDeFuncionario` é responsável por validar quando o salário do funcionário pode ser reajustado ou não, e realiza esse reajuste se as condições permitirem
