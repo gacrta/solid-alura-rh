@@ -13,5 +13,4 @@ TEST_CASE("Funcionario")
 
 	// Assert - Then
 	REQUIRE("Gabriel" == nome);
-
 }
