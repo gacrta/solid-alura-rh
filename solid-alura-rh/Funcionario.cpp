@@ -6,13 +6,9 @@ Funcionario::Funcionario(const std::string& nome, const std::string& cpf, Cargo 
 {
 }
 
-void Funcionario::reajustarSalario(double aumento)
+void Funcionario::reajustarSalario(double novoSalario)
 {
-	double percentualReajuste = aumento / salario;
-	if (percentualReajuste >= 0.4) {
-		throw ValidacaoException("Reajuste nao pode ser superior a 40% do salario!");
-	}
-	salario += aumento;
+	salario = novoSalario;
 	dataUltimoReajuste = std::time(nullptr);
 }
 

@@ -1,14 +1,7 @@
 #pragma once
 #include <string>
 #include <ctime>
-
-enum class Cargo : short
-{
-	ASSISTENTE,
-	ANALISTA,
-	ESPECIALISTA,
-	GERENTE
-};
+#include "Cargo.hpp"
 
 class Funcionario
 {
@@ -22,7 +15,7 @@ private:
 public:
 
 	Funcionario(const std::string& nome, const std::string& cpf, Cargo cargo, double salario);
-	void reajustarSalario(double aumento);
+	void reajustarSalario(double novoSalario);
 
 
 	std::string getNome() const;
