@@ -1,5 +1,4 @@
 #include "Funcionario.hpp"
-#include "ValidacaoException.hpp"
 
 Funcionario::Funcionario(const std::string& nome, const std::string& cpf, Cargo cargo, double salario) :
 	nome(nome), cpf(cpf), cargo(cargo), salario(salario)
