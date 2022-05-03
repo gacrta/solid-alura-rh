@@ -1,14 +1,14 @@
 #include "Funcionario.hpp"
 
 Funcionario::Funcionario(const std::string& nome, const std::string& cpf, Cargo cargo, double salario) :
-	nome(nome), cpf(cpf), cargo(cargo), salario(salario)
+	nome{ nome }, cpf{ cpf }, cargo{ cargo }, salario{ salario }, dataUltimoReajuste{}
 {
 }
 
 void Funcionario::reajustarSalario(double novoSalario)
 {
 	salario = novoSalario;
-	dataUltimoReajuste = std::chrono::steady_clock::now();
+	dataUltimoReajuste = std::chrono::system_clock::now();
 }
 
 std::string Funcionario::getNome() const

@@ -5,7 +5,7 @@
 
 class Funcionario
 {
-	using Data = std::chrono::time_point<std::chrono::steady_clock>;
+	using Data = std::chrono::time_point<std::chrono::system_clock>;
 
 private:
 	std::string nome;
