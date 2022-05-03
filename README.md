@@ -26,3 +26,8 @@ A classe deve ter o menor número de dependências possível. Aplicando SRP e Encap
 - Optou-se por extrair essa funcionalidade num arquivo externo ReajusteSalarial, que é responsável por validar a situação em que um aumento salarial pode ou não ocorrer
 - Após essa alteração, a classe Funcionário apenas representa um funcionário e não verifica regra de negócio para aumento salarial
 - A nova função `reajustaSalarioDeFuncionario` é responsável por validar quando o salário do funcionário pode ser reajustado ou não, e realiza esse reajuste se as condições permitirem
+
+### Aula 3 - Open Closed Principle
+- Ao adicionar uma nova validação, a função `ReajusteSalarial` poderia crescer indefinidamente.
+- Separar as validações da função `ReajusteSalarial`, de forma a cada validação ser uma função separada.
+- Optou-se por não criar classes separadas como na aula, pois no C++ não é necessário criar classes vazias. Isso ainda facilita a utilização da função `ReajusteSalarial` pois o cliente não precisa fornecer uma lista de validações para validar. Isso facilita a interface e torna a "classe" mais profunda.
