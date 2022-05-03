@@ -1,16 +1,18 @@
 #pragma once
 #include <string>
-#include <ctime>
+#include <chrono>
 #include "Cargo.hpp"
 
 class Funcionario
 {
+	using Data = std::chrono::time_point<std::chrono::steady_clock>;
+
 private:
 	std::string nome;
 	std::string cpf;
 	Cargo cargo;
 	double salario;
-	std::time_t dataUltimoReajuste;
+	Data dataUltimoReajuste;
 
 public:
 
@@ -22,5 +24,5 @@ public:
 	std::string getCpf() const;
 	Cargo getCargo() const;
 	double getSalario() const;
-	std::time_t getDataUltimoReajuste() const;
+	Data getDataUltimoReajuste() const;
 };

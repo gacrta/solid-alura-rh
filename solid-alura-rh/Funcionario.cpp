@@ -8,7 +8,7 @@ Funcionario::Funcionario(const std::string& nome, const std::string& cpf, Cargo 
 void Funcionario::reajustarSalario(double novoSalario)
 {
 	salario = novoSalario;
-	dataUltimoReajuste = std::time(nullptr);
+	dataUltimoReajuste = std::chrono::steady_clock::now();
 }
 
 std::string Funcionario::getNome() const
@@ -32,6 +32,6 @@ double Funcionario::getSalario() const
 }
 
 
-std::time_t Funcionario::getDataUltimoReajuste() const {
+Funcionario::Data Funcionario::getDataUltimoReajuste() const {
 	return dataUltimoReajuste;
 }
