@@ -11,6 +11,11 @@ void Funcionario::reajustarSalario(double novoSalario)
 	dataUltimoReajuste = std::chrono::system_clock::now();
 }
 
+void Funcionario::promove(Cargo novoCargo)
+{
+	cargo = novoCargo;
+}
+
 std::string Funcionario::getNome() const
 {
 	return nome;

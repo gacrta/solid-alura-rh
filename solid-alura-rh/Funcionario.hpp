@@ -18,6 +18,7 @@ public:
 
 	Funcionario(const std::string& nome, const std::string& cpf, Cargo cargo, double salario);
 	void reajustarSalario(double novoSalario);
+	void promove(Cargo novoCargo);
 
 
 	std::string getNome() const;
