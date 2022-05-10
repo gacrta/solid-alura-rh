@@ -2,16 +2,14 @@
 #include <string>
 #include <chrono>
 #include "Cargo.hpp"
+#include "DadosPessoais.hpp"
 
 class Funcionario
 {
 	using Data = std::chrono::time_point<std::chrono::system_clock>;
 
 private:
-	std::string nome;
-	std::string cpf;
-	Cargo cargo;
-	double salario;
+	DadosPessoais dados;
 	Data dataUltimoReajuste;
 
 public:
