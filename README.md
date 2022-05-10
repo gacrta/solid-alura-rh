@@ -31,3 +31,9 @@ A classe deve ter o menor número de dependências possível. Aplicando SRP e Encap
 - Ao adicionar uma nova validação, a função `ReajusteSalarial` poderia crescer indefinidamente.
 - Separar as validações da função `ReajusteSalarial`, de forma a cada validação ser uma função separada.
 - Optou-se por não criar classes separadas como na aula, pois no C++ não é necessário criar classes vazias. Isso ainda facilita a utilização da função `ReajusteSalarial` pois o cliente não precisa fornecer uma lista de validações para validar. Isso facilita a interface e torna a "classe" mais profunda.
+
+### Aula 4 - Principio de Substituição de Liskov
+- O Princípio de Substituição de Liskov diz que uma função g(x), em que x é do tipo T, deve ter o mesmo comportamento se chamado com g(y) caso y de tipo S e S seja subtipo de T.
+- Isso quer dizer que devemos ser atentos ao utilizar Herança em tipos que herdam de uma classe base mas não podem ter as mesmas funcionalidades que a classe base.
+- Um exemplo disso seria a classe Terceirizado criada nessa aula. Se Terceirizado herdasse de Funcionário, ela teria funcionalidades de `ajusteSalarial()` e `promove()`. No entanto, a regra de negócio não permite que um Terceirizado tenha essas funcionalidades.
+- A solução nesse caso foi extrair o conteúdo comum entre Terceirizado e Funcionário para uma outra estrutura, a `DadosPessoais` e utilizar composição para construir essas classes.
