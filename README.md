@@ -37,3 +37,11 @@ A classe deve ter o menor número de dependências possível. Aplicando SRP e Encap
 - Isso quer dizer que devemos ser atentos ao utilizar Herança em tipos que herdam de uma classe base mas não podem ter as mesmas funcionalidades que a classe base.
 - Um exemplo disso seria a classe Terceirizado criada nessa aula. Se Terceirizado herdasse de Funcionário, ela teria funcionalidades de `ajusteSalarial()` e `promove()`. No entanto, a regra de negócio não permite que um Terceirizado tenha essas funcionalidades.
 - A solução nesse caso foi extrair o conteúdo comum entre Terceirizado e Funcionário para uma outra estrutura, a `DadosPessoais` e utilizar composição para construir essas classes.
+
+### Aula 5 - Princípios de Inversão de Dependência (DIP) e de Separação de Interfaces (ISP)
+- Princípio de Inversão de Dependência defende um módulo não deve depender da implementação de outro módulo. Módulos devem depender de interfaces.
+- Além disso, interfaces não devem depender da implementação, mas a implementação que deve depender da interface.
+- Esse princípio casa muito bem com os princípios "S" e "O", de forma que se a sua classe tem apenas uma responsabilidade e possui uma interface fechada para alteração mas aberta para extensão, o ISP já "vem de graça".
+- Princípio de Separação de Interfaces defende que uma classe não deve implementar um método que não precisa só por que a sua interface (ou classe base) mudou.
+- A situação é parecida com o que aconteceria ao criar um `Terceirizado` herdando da classe `Funcionário`. A classe `Terceirizado` seria obrigada a implementar métodos que não fazem sentido para a abstração.
+- Uma solução proposta é extrair a interface dessa classe numa nova interface, que pode ser mais genérica ou específica que a interface anterior.
